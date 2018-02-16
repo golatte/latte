@@ -16,6 +16,7 @@ var _ = Describe("View", func() {
 			t, err := template.New("layout.html").Parse("<layout>yield</layout>")
 			Expect(err).ShouldNot(HaveOccurred())
 			Expect(t).ShouldNot(BeNil())
+
 			err = t.Execute(&b, nil)
 			Expect(err).ShouldNot(HaveOccurred())
 			Expect(b.String()).Should(Equal("<layout>yield</layout>"))
